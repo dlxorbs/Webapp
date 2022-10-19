@@ -14,9 +14,18 @@ body{
     gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    color: #333;
-    background: linear-gradient( to bottom ,  #5BBEFF 40%, #81CCFF 70%, #E7F5FF 100% );
+
+    
     overflow-y: scroll;
+}
+
+.day{
+    background: linear-gradient( to bottom ,  #5BBEFF 40%, #81CCFF 70%, #E7F5FF 100% );
+    color: #333;
+}
+.night{
+    background: linear-gradient(180deg, #062031 0%, #17233A 100%);
+    color: #fff;
 }
 .now{
     display: flex;
