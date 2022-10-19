@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" 
+    integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./weather.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="now">
+            <div id="city"></div>
+           <div class="holder">
+                <img class="mainicon">
+                <div id="now_contianer">
+                    <div id="temp"></div>
+                    <div id="weather"></div>
+                    <div id="maxmin"></div>
+                </div>
+           </div>
+        </div>
+        
+
+        
+        <div id="etccon">
+
+                
+            <div id="forecastcon">
+                <div id="forecast">
+                </div>
+            </div>
+
+            <div class="info week">
+
+            </div>
+            <div class="info rain">
+
+            </div>
+            <div class="info sun">
+
+            </div>
+
+            <div class="half air">
+
+            </div>
+            <div class="half sight">
+
+            </div>
+        </div>
+
+
+    </div>
+    
+
+</body>
+
+<script>
+$(function(){
+   let = url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
+// 마우스를 클릭하거나 마우스가 etc 컨테이너 안에 들어갔을 경우에 실행할 수 있도록
+   $('#etccon').on("click mouseover", function(){
+    const child = $('#etccon')
+            
+    console.log(child.index())
+            
+    child.sortable();
+    
+})
+
+ 
+
+
+$.getJSON(url, function (data) {
+        console.log(data)
+
+
+        let city        = data.name;
+        let temp        = data.main.temp;
+        let weather     = data.weather[0].description
+        let temp_max    = data.main.temp_max;
+        let temp_min    = data.main.temp_min;
+
+        let icon = data.weather[0].icon
+        console.log(icon)
+        let imgURL =  './weather/' + icon + '.svg'
+
+       $('#temp').text(Math.round(temp) + '°C');
+       $('#weather').text(weather);
+       $('#city').text(city);
+       $('#maxmin').text('최고' + Math.round(temp_max) + '°C' + '/' + '최저' + Math.round(temp_min) + '°C');
+       $('.mainicon').attr('src', imgURL)
+  
+    });
+
+
+//각각 시간의 예보
+let urlt = 'https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
+$.getJSON(urlt, function(data){
+    console.log(data);
+
+
+
+
+    for(let i = 0; i < 24; i++){
+        // let weather = data.list[i].weather[0].main;
+        let temp = data.list[i].main.temp;
+        
+
+        let dt = data.list[i].dt
+        let time = moment(dt*1000).format('A hh:mm')
+        let icon = data.list[i].weather[0].icon
+        let imgURL = './weather/' + icon + '.svg'
+
+
+        console.log(icon)
+
+        let dom = $('<div> </div>')
+        dom.append('<h3>'+ time + '</h3>')
+        dom.append('<img class = "icon" src = '+ imgURL +' >')
+        dom.append('<p>'+ Math.round(temp) + '°C' + '</p>')
+        // dom.append('<p>'+ weather + '</p>')
+
+
+        //합계 평균
+
+        // var sum = 0
+        // if( i % 8 >= 0 && i % 8 < 1){
+        //     let temp = data.list[i].main.temp;
+        //     sum += temp
+           
+        //     dom.append('<p>'+ Math.round(sum) + '</p>')
+        //     console.log(temp)
+        // }if( i % 8 >= 1 && i % 8 <2 ){
+        //     let temp = data.list[i].main.temp;
+        //     sum += temp
+           
+        //     dom.append('<p>'+ Math.round(sum) + '</p>')
+        //     console.log(temp)
+        // }if( i % 8 <= 2){
+        //     let temp = data.list[i].main.temp;
+        //     sum += temp
+           
+        //     dom.append('<p>'+ Math.round(sum) + '</p>')
+        //     console.log(temp)
+        // }
+        $('#forecast').append(dom)
+
+
+    }
+    
+})
+})
+
+    var curDown = false,
+        curXPos = 0;
+    
+    $('#forecast').mousemove(function(m){
+        if(curDown){
+        this.scrollBy(curXPos - m.pageX, 0)
+        }
+    });
+    
+    $('#forecast').mousedown(function(m){
+   
+        curXPos = m.pageX;
+        curDown = true;
+    });
+    
+    $('#forecast').mouseup(function(m){
+        curXPos = 0;
+        curDown = false;
+    });
+
+
+
+    let urlf = 'https://api.openweathermap.org/data/2.5/air_pollution?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
+    $.getJSON(urlf, function(data){
+
+    console.log(data)
+    })
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,25 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="48" cy="32" r="21" fill="url(#paint0_radial_41_1803)"/>
+<g filter="url(#filter0_i_41_1803)">
+<ellipse cx="48" cy="32" rx="21" ry="21" transform="rotate(-180 48 32)" fill="#FFEBA6" fill-opacity="0.2"/>
+</g>
+<path d="M5 61H85" stroke="white" stroke-width="5.72078" stroke-linecap="round"/>
+<path d="M13 73H92" stroke="white" stroke-width="6" stroke-linecap="round"/>
+<path d="M5 85H85" stroke="white" stroke-width="5.72078" stroke-linecap="round"/>
+<defs>
+<filter id="filter0_i_41_1803" x="27" y="6" width="47" height="47" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="7" dy="-10"/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_41_1803"/>
+</filter>
+<radialGradient id="paint0_radial_41_1803" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64.4347 25.6087) rotate(120.964) scale(31.9434)">
+<stop stop-color="white"/>
+<stop offset="0.598234" stop-color="#FFFACB"/>
+</radialGradient>
+</defs>
+</svg>
