@@ -134,7 +134,53 @@ margin: 0px;
 }
 .air{
     height: 156px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+   
 }
 .sight{
     height: 156px;
 }
+
+
+.caitext{
+    height: 28px;
+}
+
+.caibar{
+    position: relative;
+
+    width: 140px;
+    height: 2px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #4992FF 6.09%, #3AD55C 18.67%, #FEF74A 31.12%, #FFB36D 48.3%, #FF5252 62.9%, #660909 97.5%);
+}
+
+.cailocator{
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: #fff;
+}
+
+.vibration {
+
+    animation: vibration .25s infinite;
+  }
+
+  @keyframes vibration {
+    0% {
+      transform: rotate(0.5deg);
+    }
+    50% {
+      transform: rotate(-0.5deg);
+    }
+    100% {
+        transform: rotate(0.5deg);
+      }
+  }
