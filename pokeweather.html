@@ -444,12 +444,31 @@ $.getJSON(url,function (data) {
 
     let sunrise     = data.sys.sunrise;
     let sunset      = data.sys.sunset;
-    let gap         = (sunset - sunrise) 
+    let gap         = (sunset - sunrise); 
+    let sunhigh     = sunrise + gap/2
+//     let dt      = data.list.dt
+
+    let cav = $('<canvas/>')
+
+    //x축의 위치 지정해주기
+
+
+  
+  
+
     console.log(sunrise);
 
 
-    
+    $('.sun').append(cav)
+    var ctx = cav.getContext('2d')
 
+    let graph = function(){
+        
+
+        stroke(255,255,255,70);
+        line (sunrise , 0, sunset, 0)
+
+    }
         
     }
 );
