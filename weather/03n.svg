@@ -1,0 +1,35 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.5" cy="21.5" r="10.5" fill="url(#paint0_radial_63_2927)"/>
+<g filter="url(#filter0_i_63_2927)">
+<ellipse cx="11.5" cy="21.5" rx="10.5" ry="10.5" transform="rotate(-180 11.5 21.5)" fill="#FFEBA6" fill-opacity="0.2"/>
+</g>
+<g filter="url(#filter1_i_63_2927)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.3571 36.25C19.347 36.25 19.337 36.25 19.3269 36.25C14.1758 36.25 10 32.0742 10 26.9231C10 21.772 14.1758 17.5962 19.3269 17.5962C19.7974 17.5962 20.2598 17.631 20.7116 17.6983C22.4264 14.3172 25.9357 12 29.9862 12C35.3031 12 39.6875 15.9926 40.3047 21.1431C43.9658 21.6867 46.7747 24.8429 46.7747 28.6552C46.7747 32.8497 43.3744 36.25 39.1799 36.25C38.7719 36.25 38.3714 36.2178 37.9808 36.1558V36.25H19.3571Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_i_63_2927" x="1.00002" y="8.50002" width="23.5" height="23.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="3.5" dy="-5"/>
+<feGaussianBlur stdDeviation="1.25"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_63_2927"/>
+</filter>
+<filter id="filter1_i_63_2927" x="10" y="10" width="40.7747" height="26.25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4" dy="-2"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_63_2927"/>
+</filter>
+<radialGradient id="paint0_radial_63_2927" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(19.7174 18.3043) rotate(120.964) scale(15.9717)">
+<stop stop-color="white"/>
+<stop offset="0.598234" stop-color="#FFFACB"/>
+</radialGradient>
+</defs>
+</svg>

@@ -450,6 +450,8 @@ $.getJSON(url,function (data) {
 
     let cav = $('<canvas/>')
 
+
+
     //x축의 위치 지정해주기
 
 
@@ -462,13 +464,15 @@ $.getJSON(url,function (data) {
     $('.sun').append(cav)
     var ctx = cav.getContext('2d')
 
-    let graph = function(){
+    let graph = function draw(){
         
 
         stroke(255,255,255,70);
         line (sunrise , 0, sunset, 0)
 
     }
+
+    graph();
         
     }
 );
