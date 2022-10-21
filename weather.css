@@ -140,6 +140,9 @@ margin: 0px;
 
 .sun{
     height: 166px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 .air{
     height: 156px;
@@ -192,4 +195,25 @@ margin: 0px;
     100% {
         transform: rotate(0.5deg);
       }
+  }
+
+
+  /* canvas{
+   width: 333px;
+   height: 60px;
+  } */
+
+  .suninfo{
+    width: 100%;
+    height: 49px;
+  }
+
+  .cavcon{
+    width: 100%;
+    height: 60px;
+  }
+
+
+  .title{
+    font-size: 10px;
   }

@@ -44,7 +44,9 @@
 
             </div>
             <div class="info sun">
-
+                <div class="title"> 일출 일몰</div>
+                <div class="suninfo"></div>
+                <div class="cavcon"></div>
             </div>
 
             <div class="half air">
@@ -70,7 +72,7 @@ $(function(){
 // 마우스를 클릭하거나 마우스가 기타 컨테이너 안에 들어갔을 경우에는 
 var defaultTime = 0
 
-    $('#etccon').on("tabhold touchstart ", function(){
+    $('#etccon').on("tabhold ", function(){
 
         defaultTime = setInterval(function() {
             const child = $('#etccon')
@@ -252,7 +254,6 @@ let c = [
         ppm* Math.round(data.list[0].components.no2),
         data.list[0].components.pm10,
         data.list[0].components.pm2_5
-        
         ]
 
 console.log(c)
@@ -399,7 +400,7 @@ if(c[5] <= 15){
         il[5]  = 101;
         bph[5] = 75;
         bpl[5] = 36;
-}else if( 75 < c[5] && c[5] <= 0.6){
+}else if( 75 < c[5] && c[5] <= 500){
         ih[5]  = 500;
         il[5]  = 251;
         bph[5] = 500;
@@ -413,11 +414,11 @@ let ip = [
 
 ]
 
-for(let i = 0; i < 6; i++ ){
+for(let i = 0; i < 6; ++i ){
 
-    let cal = ((ih[i]-il[i]) / (bph[i]-bpl[i])) * (c[i] - bpl[i]) +il[i]
+    let cal = ((ih[i]-il[i]) / (bph[i]-bpl[i])) * (c[i] - bpl[i]) +il[i];
     
-   ip.push( cal )
+   ip.push( cal );
 
 
 }
@@ -441,14 +442,26 @@ $('.caibar').append('<div style = "transform:translate('+cai+'px, -50%)" class =
 
 
 $.getJSON(url,function (data) {
-
+    let cav = $('<canvas/>')
     let sunrise     = data.sys.sunrise;
     let sunset      = data.sys.sunset;
     let gap         = (sunset - sunrise); 
-    let sunhigh     = sunrise + gap/2
+    let sunhigh     = sunrise + gap/2;
+    let today       = 1666278000
+
+    let srx = sunrise - today
+    let ssx = sunset - today
+
+    let st =  $('.sun').innerWidth() / 86400
+
+    let t = st.toFixed(4);
+
+    console.log(srx*t)
+
+
+   let risegap = sunrise - today;
 //     let dt      = data.list.dt
 
-    let cav = $('<canvas/>')
 
 
 
@@ -456,23 +469,40 @@ $.getJSON(url,function (data) {
 
 
   
-  
-
-    console.log(sunrise);
 
 
-    $('.sun').append(cav)
-    var ctx = cav.getContext('2d')
 
-    let graph = function draw(){
-        
 
-        stroke(255,255,255,70);
-        line (sunrise , 0, sunset, 0)
+    $('.cavcon').append(cav)
 
-    }
 
-    graph();
+    var ctx = cav[0].getContext('2d');
+
+    cav.attr('width', '333')  
+    cav.attr('height', '60')  
+
+//     ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+    ctx.beginPath() 
+    ctx.arc( srx*t , 30, 6, 0, 2*Math.PI )
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.beginPath() 
+    ctx.arc( ssx*t , 30, 6, 0, 2*Math.PI )
+
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(0,30)
+    ctx.lineTo(333,30)
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+
+
+
+
         
     }
 );
