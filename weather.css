@@ -134,6 +134,20 @@ margin: 0px;
 .week{
     height: 316px;
 }
+
+.weekday{
+
+padding :  0px 16px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.icon_sm{
+    width: 24px;
+    height: 24px;
+}
+
 .rain{
   height: 76px;
 }
@@ -217,3 +231,4 @@ margin: 0px;
   .title{
     font-size: 10px;
   }
+  
