@@ -1,8 +1,10 @@
  
+
 //일주일 간의 날씨
+
+
 let urld = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
 $.getJSON(urld, function(data){
-
 
 
     let Max = [
@@ -17,9 +19,16 @@ $.getJSON(urld, function(data){
     let Icon = [
 
     ]
+    let Date = [
+
+    ]
+
+
 
 
     console.log (data)
+
+
     for(let i = 0; i < 7; i++){
    
         let temp = data.list[i].temp;
@@ -35,24 +44,29 @@ $.getJSON(urld, function(data){
  
 
         let dt      = data.list[i].dt
-        let time    = moment(dt*1000).format('A hh:mm')
+        let time    = moment(dt*1000).lang("ko").day()
         let icon    = data.list[i].weather[0].icon
         let imgURL  = './weather/' + icon + '.svg'
 
         Icon.push(imgURL);
+        Date.push(time);
+        console.log(time)
       
     }
 
     
     console.log (Icon)
 
+//이거도 수정 필요
 
     
-
+for(let i in Date){
+        $('.info > .weekday:eq('+i+')').append('<span class = "date" >'+Date[i]+'</span>')
+    }
 for(let i in Icon){
             $('.info > .weekday:eq('+i+')').append('<img class = "icon_sm" src = '+ Icon[i] +' >')
         }
-  
+
 
     
 
@@ -62,7 +76,7 @@ for(let i in Icon){
     let weekmax = Math.round(Math.max.apply(null,Max))
     let weekmin = Math.round(Math.min.apply(null,Min))
 
-    console.log(Min)
+    
     console.log(weekmin)
     console.log(weekmax)
 

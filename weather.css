@@ -137,10 +137,16 @@ margin: 0px;
 
 .weekday{
 
-padding :  0px 16px;
+margin :  0px 16px;
  display: flex;
  justify-content: space-between;
  align-items: center;
+ border-bottom: 1px solid #ffffff40;
+}
+
+.date{
+    font-size: 12px;
+    width: 20px;
 }
 
 .icon_sm{
