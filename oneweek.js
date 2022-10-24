@@ -60,12 +60,12 @@ $.getJSON(urld, function(data){
 //이거도 수정 필요
 
     
-for(let i in Date){
+    for(let i in Date){
         $('.info > .weekday:eq('+i+')').append('<span class = "date" >'+Date[i]+'</span>')
     }
-for(let i in Icon){
-            $('.info > .weekday:eq('+i+')').append('<img class = "icon_sm" src = '+ Icon[i] +' >')
-        }
+    for(let i in Icon){
+        $('.info > .weekday:eq('+i+')').append('<img class = "icon_sm" src = '+ Icon[i] +' >')
+    }
 
 
     
@@ -83,21 +83,24 @@ for(let i in Icon){
     let graphwidth = Math.round(120/(weekmax - weekmin+1))
     console.log(graphwidth)
     
-
-    let cav = $('<canvas class = "bar"/>')
+    for(let i in Date){
+        let cav = $('<canvas class = "bar"/>')
  
-    $('.cav').append(cav)
-        var ctx = cav[0].getContext('2d');
-
-        $('.bar').attr('width', '120')  
-        $('.bar').attr('height', '40')  
+        $('.cav').eq(i).append(cav)
         
-
+        var ctx = cav[0].getContext('2d');
+    
+        cav.attr('width', '120')  
+        cav.attr('height', '40')  
+        
         ctx.beginPath();
         ctx.moveTo(0,20)
         ctx.lineTo(120,20)
         ctx.strokeStyle = 'red';
         ctx.stroke();
+    }
+
+   
 
 
 

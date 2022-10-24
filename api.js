@@ -3,7 +3,7 @@ $(function(){
  // 마우스를 클릭하거나 마우스가 기타 컨테이너 안에 들어갔을 경우에는 
  var defaultTime = 0
  
-     $('#etccon').on("tabhold ", function(){
+     $('#etccon').on("tabhold  touchstart", function(){
  
          defaultTime = setInterval(function() {
              const child = $('#etccon')
@@ -453,27 +453,35 @@ $(function(){
  
  // 잘모르겠음,.,,,, 노가다로 제작한거라 변경할 필요가 있는데 점 세개를 지나는 곡선을 만들면 될거같은데
      let Pi = Math.PI;
-     ctx.beginPath() 
-     ctx.moveTo(-100,60)
-     ctx.bezierCurveTo(-100,60,0,Math.sin(Pi/2)*30+60, srx*t,Math.sin(Pi/2)*30)
+     ctx.beginPath();
+
+     ctx.moveTo(0, 40)
+     for(let i=0; i<333; i++){
+        let h = 30 + 20 * Math.sin(i * 2 * Math.PI/333 + Math.PI/2)
+        ctx.lineTo(i, h)
+     }
      ctx.stroke();
+
+//      ctx.moveTo(-100,60)
+//      ctx.bezierCurveTo(-100,60,0,Math.sin(Pi/2)*30+60, srx*t,Math.sin(Pi/2)*30)
+//      ctx.stroke();
  
  
-     ctx.beginPath() 
-     ctx.moveTo(ssx*t,30)
-     ctx.bezierCurveTo(ssx*t,30,333,Math.sin(Pi/2)*30+60,400,60)
-     ctx.stroke();
+//      ctx.beginPath() 
+//      ctx.moveTo(ssx*t,30)
+//      ctx.bezierCurveTo(ssx*t,30,333,Math.sin(Pi/2)*30+60,400,60)
+//      ctx.stroke();
      
  
-     ctx.beginPath() 
-     ctx.moveTo(srx*t,30)
-     ctx.bezierCurveTo(srx*t,30,sunhigh*t ,(ssx-srx/2)*t,ssx*t,30)
-     ctx.stroke();
+//      ctx.beginPath() 
+//      ctx.moveTo(srx*t,30)
+//      ctx.bezierCurveTo(srx*t,30,sunhigh*t ,(ssx-srx/2)*t,ssx*t,30)
+//      ctx.stroke();
  
-     ctx.beginPath() 
-     ctx.arc( now*t , Math.sin(Pi/(2*(sunhigh))*now)*30, 6, 0, 2*Math.PI )
-     ctx.fillStyle = color;
-     ctx.fill();
+//      ctx.beginPath() 
+//      ctx.arc( now*t , Math.sin(Pi/(2*(sunhigh))*now)*30, 6, 0, 2*Math.PI )
+//      ctx.fillStyle = color;
+//      ctx.fill();
  
      console.log((ssx-srx/2)*t)
  
