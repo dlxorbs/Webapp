@@ -139,9 +139,24 @@ margin: 0px;
 
 margin :  0px 16px;
  display: flex;
+ flex-direction: row-reverse;
  justify-content: space-between;
  align-items: center;
  border-bottom: 1px solid #ffffff40;
+}
+
+
+.cav > span{
+    width: 24px;
+    text-align: center;
+}
+
+.cav{
+    height: 40px;
+    display: flex;
+    gap: 4px;
+    font-size: 12px;
+    align-items: center;
 }
 
 .date{
@@ -218,10 +233,10 @@ margin :  0px 16px;
   }
 
 
-  /* canvas{
-   width: 333px;
-   height: 60px;
-  } */
+.cav > canvas{
+   background-color: #ffffff;
+   border-radius: 9999px;
+  }
 
   .suninfo{
     width: 100%;

@@ -59,13 +59,15 @@ $.getJSON(urld, function(data){
 
 //이거도 수정 필요
 
+for(let i in Icon){
+    $('.info > .weekday:eq('+i+')').append('<img class = "icon_sm" src = '+ Icon[i] +' >')
+}
+    let day = ["일","월","화","수","목","금","토"]
     
     for(let i in Date){
-        $('.info > .weekday:eq('+i+')').append('<span class = "date" >'+Date[i]+'</span>')
+        $('.info > .weekday:eq('+i+')').append('<span class = "date" >'+day[Date[i]]+'</span>')
     }
-    for(let i in Icon){
-        $('.info > .weekday:eq('+i+')').append('<img class = "icon_sm" src = '+ Icon[i] +' >')
-    }
+   
 
 
     
@@ -76,29 +78,62 @@ $.getJSON(urld, function(data){
     let weekmax = Math.round(Math.max.apply(null,Max))
     let weekmin = Math.round(Math.min.apply(null,Min))
 
-    
+
+
+
     console.log(weekmin)
     console.log(weekmax)
 
-    let graphwidth = Math.round(120/(weekmax - weekmin+1))
+    let graphwidth = Math.round(120/(weekmax - weekmin))
     console.log(graphwidth)
     
     for(let i in Date){
         let cav = $('<canvas class = "bar"/>')
- 
-        $('.cav').eq(i).append(cav)
+        let maxtext = $('<span>'+Math.round(Max[i])+'</span>')
+        let mintext = $('<span>'+Math.round(Min[i])+'</span>')
         
+        $('.cav').eq(i).append(mintext)
+  
+        $('.cav').eq(i).append(cav)
+      
+        $('.cav').eq(i).append(maxtext)
+ 
         var ctx = cav[0].getContext('2d');
     
         cav.attr('width', '120')  
-        cav.attr('height', '40')  
+        cav.attr('height', '2')  
         
+
+
+        // ctx.beginPath();
+        // ctx.moveTo(0,20)
+        // ctx.lineTo(120,20)
+        // ctx.lineCap = 'round';
+        // ctx.strokeStyle = '#ffffff';
+        // ctx.stroke();
+
+        
+    
+ 
+        var grad= ctx.createLinearGradient( (Min[i]-weekmin)*graphwidth,20,(Max[i]-weekmin)*graphwidth,20);
+
+        grad.addColorStop(0, "#4AD9ED");
+        grad.addColorStop(1, "#E7F99E");
+        
+        ctx.strokeStyle = grad;
+
         ctx.beginPath();
-        ctx.moveTo(0,20)
-        ctx.lineTo(120,20)
-        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.moveTo((Math.round(Min[i])-weekmin)*graphwidth,1);
+        ctx.lineTo((Math.round(Max[i])-weekmin)*graphwidth,1);
         ctx.stroke();
+
+        
+    
     }
+
+ 
 
    
 
