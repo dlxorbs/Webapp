@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" 
+    integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="./weather.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="now">
+            <div id="city"></div>
+           <div class="holder">
+                <img class="mainicon">
+                <div id="now_contianer">
+                    <div id="temp"></div>
+                    <div id="weather"></div>
+                    <div id="maxmin"></div>
+                </div>
+           </div>
+        </div>
+        
+
+        
+        <div id="etccon">
+
+                
+            <div id="forecastcon">
+                <div id="forecast">
+                </div>
+            </div>
+
+            <div class="info week">
+                <div class="weekday">
+                    <div class="cav"></div>
+
+                </div>
+                <div class="weekday">
+                    <div class="cav"></div>
+                </div>
+                <div class="weekday">
+                    <div class="cav"></div>
+                </div>
+                <div class="weekday">
+                    <div class="cav"></div>
+                </div>
+                <div class="weekday">
+                    <div class="cav"></div>
+                </div>
+                <div class="weekday">
+                    <div class="cav"></div>
+                </div>
+                <div class="weekday">
+                    <div class="cav"></div>
+                </div>
+            </div>
+            <div class="info rain">
+
+
+            </div>
+            <div class="info sun">
+                <div class="title"> 일출 일몰</div>
+                <div class="suninfo"></div>
+                <div class="cavcon"></div>
+            </div>
+
+            <div class="half air">
+                <div class="caitext"></div>
+                <div class="caibar">
+                
+                </div>
+            </div>
+            <div class="half sight">
+
+            </div>
+        </div>
+
+
+    </div>
+    
+
+</body>
+
+<script src="./api.js"></script>
+<script src="./sunrise.js"></script>
+<script src="./oneweek.js"></script>
+</html>
