@@ -3,7 +3,7 @@ $(function(){
  // 마우스를 클릭하거나 마우스가 기타 컨테이너 안에 들어갔을 경우에는 
  var defaultTime = 0
  
-     $('#etccon').on("tabhold  touchstart", function(){
+     $('#etccon').on("tabhold", function(){
  
          defaultTime = setInterval(function() {
              const child = $('#etccon')
