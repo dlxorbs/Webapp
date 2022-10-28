@@ -10,18 +10,23 @@
     integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
- 
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-
+    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js"
+    integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo="
+    crossorigin="anonymous"></script>
  <link rel="stylesheet" href="./weather.css">
 </head>
 
 <body>
+
+
     <div class="container">
+        
+        <div id="edit">
+            <button>완료</button>
+        </div>
+
+
+
         <div class="now">
             <div id="city"></div>
            <div class="holder">
@@ -40,45 +45,57 @@
 
                 
             <div id="forecastcon">
+                
+                <div class="header_sm"></div>
+
                 <div id="forecast">
                 </div>
+
             </div>
 
             <div class="info week">
-                <div class="weekday">
-                    <div class="cav"></div>
 
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
+                <div class="header_sm"></div>
+
+                <div id="weekdaycon">
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
                 </div>
             </div>
             <div class="info rain">
 
+                
+                <div class="header_sm"></div>
 
             </div>
-            <div class="info sun">
-                <div class="title"> 일출 일몰</div>
+            <div class="info sun">              
+                <div class="header_sm"></div>
                 <div class="suninfo"></div>
                 <div class="cavcon"></div>
             </div>
 
             <div class="half air">
+                
+                <div class="header_sm"></div>
                 <div class="caitext"></div>
                 <div class="caibar">
                 
@@ -86,6 +103,7 @@
             </div>
             <div class="half sight">
 
+                <div class="header_sm"></div>
             </div>
         </div>
 

@@ -22,8 +22,6 @@
     let srx = Math.round((sunrise - td)/60);
     let ssx = Math.round((sunset - td)/60);
     let now = (dt -td)/60
-    let gap = ssx-srx; 
-    let risegap = sunrise - td;
     let sunhigh     = Math.round((srx + ssx)/2);
 
     let st =  $('.sun').innerWidth()/1440

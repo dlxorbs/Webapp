@@ -1,31 +1,57 @@
+
+ document.oncontextmenu = function(){return false;}
+
+
+ 
 $(function(){
     let = url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
  // 마우스를 클릭하거나 마우스가 기타 컨테이너 안에 들어갔을 경우에는 
  var defaultTime = 0
+
  
-     $('#etccon').on("tabhold", function(){
+ $('.ui-loader').hide();
+ $('#edit').hide()
+
+
+     $('#etccon').on("taphold", function(){
  
-         defaultTime = setInterval(function() {
-             const child = $('#etccon')
-                     
-             console.log(child.index())
-                     
-             child.sortable();
+         defaultTime = setInterval(function vibration() {
+
+             $('#etccon > div').addClass('vibration');
+
+        
+          });
+
+          
+          $('#edit').show()
+          $(this).sortable()
+          $(this).sortable( "option", "disabled", false );
  
-             $('#etccon > div').addClass('vibration')
-             
-          }, 3000);
+        })
+
+
+        $('#edit > button').on("tap", function(){
+                $('#edit').hide()
+                clearInterval(defaultTime)
+                $('#etccon > div').removeClass('vibration');
+
+                $('#etccon').sortable('disable'); 
+        })
+
+
+
+
+
+
+
  
-             })
-     
- 
-   
+          
  
  
   
  
  
- 
+ //대표예보
   
  
  
