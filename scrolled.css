@@ -1,0 +1,17 @@
+.etc-scrolled{
+    padding-top: 208px;
+}
+
+.now-scrolled{
+    position: fixed;
+
+}
+
+.city-scrolled{
+    background-color: #062031;
+    padding-top: 10px;
+}
+
+.city-nonescrolled{
+    padding-top: 34px;
+}
