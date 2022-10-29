@@ -82,9 +82,16 @@ $(function(){
  
         if(sunrise < dt && dt < sunset){
          $('.container').toggleClass('day')
-         
+
+
+                  
         }else{
          $('.container').toggleClass('night')
+
+                
+
+         $('.container').append('<div class ="cloud"> </div>')
+
         }
  
  
