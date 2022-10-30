@@ -23,7 +23,7 @@ $(function () {
           let tempcalc = weathercalc - tempheight;
      
     
-          console.log(containertop)
+          // console.log(containertop)
 
 
           if(containertop > 24){
@@ -32,7 +32,6 @@ $(function () {
                $('#city').removeClass('city-nonescrolled')
                $('#city').addClass('city-scrolled')
                $('.holder').css({
-             
                     'z-index'   : '0',
                })
 
@@ -43,7 +42,6 @@ $(function () {
                $('#etccon').removeClass('etc-scrolled')
                $('#city').addClass('city-nonescrolled')
                $('.holder').css({
-                    'transform' : 'translateY(0px)',
                     'z-index'   : '0',
                })
           }
@@ -115,7 +113,24 @@ $(function () {
          
           }
 
+          //
 
+          let forecasttop = $('#forecastcon').offset().top;
+          let scrollheight = $('.scrollside').innerHeight()
+          console.log(scrollheight)
+
+
+          if(forecasttop < 63 && forecasttop > 0){
+          
+               $('.header_sm').css({ 
+                              'top': '62px',   
+                              'z-index' : '3'
+                         })
+     
+          }
+              
+          
+          
      // if(nowtop < 180 && nowtop > 0 || nowtop < -10){
      //      $('.now').css({'position' : 'fixed',
      //      'z-index' : '5',
