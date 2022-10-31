@@ -11,18 +11,19 @@ $(function () {
 
           let maxmintop =  $('#maxmin').offset().top;
           let maxminheight = $('#maxmin').innerHeight();
-          let maxmincalc = nowheight - maxminheight
+          let weatherbottom = nowheight - maxminheight
+          let maxminbottom = maxminheight + maxmintop;
 
 
           let weathertop =  $('#weather').offset().top;
           let weatherheight = $('#weather').innerHeight();
-          let weathercalc = maxmincalc - weatherheight;
+          let tempbottom = weatherbottom - weatherheight;
 
           let temptop =  $('#temp').offset().top;
           let tempheight = $('#temp').innerHeight();
-          let tempcalc = weathercalc - tempheight;
+          let tempcalc = tempbottom - tempheight;
      
-    
+        
           // console.log(containertop)
 
 
@@ -47,33 +48,47 @@ $(function () {
           }
 
           //maxmin사라지게 스크롤값에 따라
-          if(maxmintop >= maxmincalc){
-               if( containertop <= 40 && containertop > 24 ){
-                    $('#maxmin, .mainicon').css({
-                         'opacity' : 1-containertop*(1/40)
 
-                    })
-               }else if(containertop > 40 ){
-                    $('#maxmin, .mainicon').css({
-                         'opacity' : '0'
 
-                    })
-               }else{
-                    $('#maxmin, .mainicon').css({
-                         'opacity' : '1'
 
-                    })
+ 
+               if( etctop <= 165 && etctop >= 149){
+                    if( etctop < maxminbottom && etctop > maxmintop+10 ){
+                         $('#maxmin, .mainicon').css({
+                              'opacity' : (etctop-100)/300,
+                              'transition' : '0.1s'
+     
+                         })
+                    }else if(etctop <= maxmintop+10){
+                         $('#maxmin, .mainicon').css({ 
+                              'opacity' : '0',
+                              'transition' : 'none'
+     
+                         })
+                    }else{
+                         $('#maxmin, .mainicon').css({
+                              'opacity' : '1',
+                              'transition' : 'none'
+     
+                         })
+               
                }
+
+               console.log( 1-(etctop-100)/100)
+               console.log(etctop)
          
           }
 
 
                     
           //weather사라지게 스크롤값에 따라
-          if(weathertop >= weathercalc){
-               if( containertop <= 70 && containertop > 40 ){
+          if(etctop < tempbottom){
+               
+               if( etctop <= weatherbottom && etctop > weathertop ){
                     $('#weather').css({
-                         'opacity' : 1-containertop*(1/100)
+                         'opacity' : etctop * (1/(weatherheight*10*2))
+                         
+             
 
                     })
                }else if(containertop > 70 ){
@@ -87,7 +102,8 @@ $(function () {
 
                     })
                }
-         
+
+
           }
 
 
@@ -117,7 +133,7 @@ $(function () {
 
           let forecasttop = $('#forecastcon').offset().top;
           let scrollheight = $('.scrollside').innerHeight()
-          console.log(scrollheight)
+          
 
 
           if(forecasttop < 63 && forecasttop > 0){

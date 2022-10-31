@@ -24,15 +24,15 @@ $(function(){
 
           
           $('#edit').show()
-          $(this).sortable()
-          $(this).sortable( "option", "disabled", false );
+          $('#etccon').sortable()
+          $('#etccon').sortable( "option", "disabled", false );
  
         })
 
-
-        $('#edit > button').on("tap", function(){
+        $('#edit > button').on("tap touchend", function(){
                 $('#edit').hide()
                 clearInterval(defaultTime)
+
                 $('#etccon > div').removeClass('vibration');
 
                 $('#etccon').sortable('disable'); 
