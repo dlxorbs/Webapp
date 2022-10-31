@@ -11,7 +11,7 @@ body{
 }
 
 .container{
-    width: 375px;
+    width: 390px;
     height: 812px;
     padding-bottom: 64px;
     margin: auto;
@@ -27,8 +27,7 @@ body{
 }
 
 #edit{
-
-    width: 375PX;
+    width: 390PX;
     height: 48px;
 
     position: fixed;
@@ -189,7 +188,7 @@ margin: 0px;
 }
 
 .ui-pagecontainer {
-    width: 375px;
+    width: 390px;
 }
 
 .header_sm{
@@ -213,7 +212,7 @@ margin: 0px;
 
 .info{
     width: 100%;
-    background-color: #ffffff40;
+
     border-radius: 12px;
     position: relative;
     mix-blend-mode: normal;
@@ -231,7 +230,9 @@ margin: 0px;
     height: 308px;
 }
 
-
+.weekcontainer{
+    background-color: #ffffff40;
+}
 .weekday{
 
  margin :  0px 16px;
@@ -267,14 +268,27 @@ margin: 0px;
 }
 
 .rain{
-  height: 76px;
+}
+
+.raincontainer{
+    background-color: #ffffff40;
+    border-radius: 0px 0px 12px 12px ;
+    height: 52px;
+    
 }
 
 .sun{
-    height: 166px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    
+}
+
+.suninfo{
+    padding-top: 10px;
+}
+
+.suncontainer{
+    height: 140px;
+    background-color: #ffffff40;
+    border-radius: 0px 0px 12px 12px ;
 }
 .air{
     height: 156px;
@@ -342,7 +356,7 @@ margin: 0px;
 
   .cavcon{
     width: 100%;
-    height: 60px;
+    height: 80px;
   }
 
 
