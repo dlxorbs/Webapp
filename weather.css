@@ -10,8 +10,11 @@ body{
     
 }
 
+.ui-page{
+    overflow: hidden;
+}
 .container{
-    width: 390px;
+    width: 100vw;
     height: 812px;
     padding-bottom: 64px;
     margin: auto;
@@ -62,16 +65,6 @@ body{
     color: #fff;
 }
 
-.cloud{
-    background-image: url(./weather/cloud.png);
-    background-size: auto;
-    width: 586px;
-    height: 380px;
-
-    position: fixed;
-    top: 250px;
-    z-index: 1;
-}
 
 .now{
     display: flex;
@@ -80,7 +73,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 0px;
-    width: 375px;
+    width: 100%;
     z-index: 3;
 
     }
@@ -129,12 +122,13 @@ body{
 }
 .scrollside{
     position: absolute;
-    bottom: 0px;
     width: 317px;
     padding: 8px;
     border-radius: 0 0 12px 12px;
     background-color: #ffffff40;
 }
+
+
 
 #forecast{
     width: 317px;
@@ -188,11 +182,11 @@ margin: 0px;
 }
 
 .ui-pagecontainer {
-    width: 390px;
+    width: 100vw;
 }
 
 
-.header_sm{
+.header-sm{
     width: 100%;
     background-color: #ffffff40;
     height: auto;
@@ -203,17 +197,22 @@ margin: 0px;
     font-size: 10px;
     mix-blend-mode: normal;
     backdrop-filter: blur(10px);
-    padding: 6px 0px 6px;
+    padding: 6px 0px 0px;
 }
 
-.header_sm p {
+.header-sm > p {
+
     height: 12px;
-    margin: 0px 12px;
+    margin: 0px;
+    padding-bottom: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-bottom: 1px solid #ffffff40;
 }
 
 .info{
     width: 100%;
-
+    /* overflow: hidden; */
     border-radius: 12px;
     position: relative;
     mix-blend-mode: normal;
@@ -233,10 +232,11 @@ margin: 0px;
 
 .weekcontainer{
     background-color: #ffffff40;
+    border-radius: 0px 0px 12px 12px;
 }
 .weekday{
 
- margin :  0px 16px;
+ margin :  0px 8px;
  display: flex;
  flex-direction: row-reverse;
  justify-content: space-between;
@@ -261,25 +261,27 @@ margin: 0px;
 .date{
     font-size: 12px;
     width: 20px;
+    
 }
 
-.icon_sm{
+.icon-sm{
     width: 24px;
     height: 24px;
 }
 
 .rain{
+    background-color: #ffffff40;
 }
 
 .raincontainer{
-    background-color: #ffffff40;
+
     border-radius: 0px 0px 12px 12px ;
     height: 52px;
     
 }
 
 .sun{
-    
+    background-color: #ffffff40;
 }
 
 .suninfo{
@@ -288,7 +290,7 @@ margin: 0px;
 
 .suncontainer{
     height: 140px;
-    background-color: #ffffff40;
+
     border-radius: 0px 0px 12px 12px ;
 }
 .air{
@@ -365,3 +367,16 @@ margin: 0px;
     font-size: 10px;
   }
   
+
+
+
+  .cloud{
+    top: 0;
+    background-size: auto;
+    width: auto;
+    height: auto;
+    opacity: 0.5;
+    position: fixed;
+    right:  -950px;
+    z-index: 1;
+}

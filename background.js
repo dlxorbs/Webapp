@@ -1,17 +1,24 @@
-$(function(){
- var canvas = $('<canvas class = "cloud"></canvas>')
 
- $('.ui-page').append(canvas)
- setInterval(() => {
+    $(function(){
+  
 
-    let i = 0 ;
-     
-    let dx = i++
-    
 
-    $('.cloud').css({
-        'right' : dx +'px'
+                
+
+        $('.container').append('<div class="cloud"><img src="./weather/cloud.png" alt=""></div>')
+
+        function loop() {
+                    
+
+            $('.cloud').css({right:-950});
+            $('.cloud').animate ({
+                right: '100%',
+            }, 120000, 'linear',function(){
+                loop();
+            });
+        }
+        loop();
     })
- }, 1000);
 
-})
+
+

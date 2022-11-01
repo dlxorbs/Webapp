@@ -120,9 +120,9 @@ $(function () {
           
 
 
-          if(forecasttop < 63 && forecasttop > 0){
+          if(etctop < 63 ){
           
-               $('.header_sm').css({ 
+               $('.header-sm').css({ 
                               'top': '62px',   
                               'z-index' : '3'
                          })
@@ -130,7 +130,7 @@ $(function () {
           }
               
       
-
+console.log(etctop)
 
 });
 

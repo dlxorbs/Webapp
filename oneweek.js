@@ -60,7 +60,7 @@ $.getJSON(urld, function(data){
 //이거도 수정 필요
 
 for(let i in Icon){
-    $('.weekday:eq('+i+')').append('<img class = "icon_sm" src = '+ Icon[i] +' >')
+    $('.weekday:eq('+i+')').append('<img class = "icon-sm" src = '+ Icon[i] +' >')
 }
     let day = ["일","월","화","수","목","금","토"]
     

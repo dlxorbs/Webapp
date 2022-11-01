@@ -89,9 +89,6 @@ $(function(){
          $('.container').toggleClass('night')
          $('.header_sm').toggleClass('nighttext')
          $('#city').toggleClass('nighthead')
-                
-
-         $('.container').append('<div class ="cloud"> </div>')
 
         }
  
