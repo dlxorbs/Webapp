@@ -73,7 +73,7 @@ $(function () {
           if(weathertop >= weathercalc){
                if( containertop <= 70 && containertop > 40 ){
                     $('#weather').css({
-                         'opacity' : 1-containertop*(1/100)
+                         'opacity' : 1-containertop*(1/80)
 
                     })
                }else if(containertop > 70 ){
