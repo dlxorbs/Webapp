@@ -71,20 +71,24 @@ $(function () {
                     
           //weather사라지게 스크롤값에 따라
           if(weathertop >= weathercalc){
-               if( containertop <= 70 && containertop > 40 ){
+               if( containertop <= 60 && containertop > 40 ){
                     $('#weather').css({
-                         'opacity' : 1-containertop*(1/80)
+                         'opacity' : 0.7-containertop*(1/100),
+                         'transition' : '0.2s',
+                         // 'transform' : 'scale('+containertop*(1/100)+')'
 
                     })
-               }else if(containertop > 70 ){
+               }else if(containertop > 60 ){
                     $('#weather').css({
-                         'opacity' : '0'
-
+                         'opacity' : '0',
+                         'transition' : 'none',
+                         // 'transform' : 'scale(0)'
                     })
                }else{
                     $('#weather').css({
-                         'opacity' : '1'
-
+                         'opacity' : '1',
+                         'transition' : '0.2s',
+                         // 'transform' : 'scale(1)'
                     })
                }
          

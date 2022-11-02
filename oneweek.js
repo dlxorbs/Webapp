@@ -117,8 +117,8 @@ for(let i in Icon){
  
         var grad= ctx.createLinearGradient( (Min[i]-weekmin)*graphwidth,20,(Max[i]-weekmin)*graphwidth,20);
 
-        grad.addColorStop(0, "#4AD9ED");
-        grad.addColorStop(1, "#E7F99E");
+        grad.addColorStop(0, "#0AB9D0");
+        grad.addColorStop(1, "#CCFF00");
         
         ctx.strokeStyle = grad;
 
