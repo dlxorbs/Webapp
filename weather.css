@@ -121,23 +121,14 @@ body{
 #maxmin{
     font-size: 12px;
 }
-#forecastcon{
-    width: 333px;
-    height: 120px;
-    position: relative;
 
-
-    user-select: none;
-
-    
-    border-radius: 12px;
-}
 .scrollside{
     position: absolute;
     width: 317px;
     padding: 8px;
     border-radius: 0 0 12px 12px;
-    background-color: #ffffff40;
+    /* background-color: #ffffff40; */
+    
  
 }
 
@@ -201,16 +192,16 @@ margin: 0px;
 
 .header-sm{
     width: 100%;
-    background-color: #ffffff40;
+    /* background-color: #ffffff40; */
     height: auto;
     position: sticky;
     top: 0;
     left: 0;
     border-radius: 12px 12px 0px 0px;
     font-size: 10px;
-    /* mix-blend-mode: normal; */
-    backdrop-filter: blur(10px); 
     padding: 6px 0px 0px;
+
+
 }
 
 .header-sm > p { 
@@ -223,14 +214,24 @@ margin: 0px;
     border-bottom: 1px solid #ffffff40;
 }
 
+
+#forecastcon{
+    height: 120px;
+
+    user-select: none;
+
+    
+    border-radius: 12px;
+}
+
+
 .info{
     width: 100%;
     /* overflow: hidden; */
     border-radius: 12px;
     position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(12px);
- 
+    background-color: #ffffff40;
+
 }
 
 .half{
@@ -238,6 +239,8 @@ margin: 0px;
     background-color: #ffffff40;
     border-radius: 12px;
     position: relative;
+
+    
 }
 
 .week{
@@ -245,7 +248,7 @@ margin: 0px;
 }
 
 .weekcontainer{
-    background-color: #ffffff40;
+  
     border-radius: 0px 0px 12px 12px;
 }
 .weekday{
@@ -394,7 +397,3 @@ margin: 0px;
     right:  -950px;
     z-index: 1;
 }
-
-/* 
-mix-blend-mode: normal;
-backdrop-filter: blur(10px); */

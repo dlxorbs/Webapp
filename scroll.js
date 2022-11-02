@@ -128,9 +128,19 @@ $(function () {
           
                $('.header-sm').css({ 
                               'top': '62px',   
-                              'z-index' : '3'
+                              'z-index' : '3',
+                              'mix-blend-mode': 'normal',
+                              'backdrop-filter': 'blur(10px)' 
                          })
      
+          }else{
+                         
+               $('.header-sm').css({ 
+                    'top': '62px',   
+                    'z-index' : '3',
+                    'mix-blend-mode': 'none',
+                    'backdrop-filter': 'none' 
+               })
           }
               
       
