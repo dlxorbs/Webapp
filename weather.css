@@ -261,7 +261,9 @@ margin: 0px;
  border-top: 1px solid #ffffff40;
 }
 
-
+.weekday:nth-child(1){
+    border-top: none;
+}
 .cav > span{
     width: 24px;
     text-align: center;

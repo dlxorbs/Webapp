@@ -13,14 +13,13 @@ $(function(){
  $('#edit').hide()
 
 
+ function vibration() {
+    $('#etccon > div').addClass('vibration');
+ }
+
      $('#etccon').on("taphold", function(){
  
-         defaultTime = setInterval(function vibration() {
-
-             $('#etccon > div').addClass('vibration');
-
-        
-          });
+         defaultTime = setInterval(vibration());
 
           
           $('#edit').show()
@@ -29,7 +28,7 @@ $(function(){
  
         })
 
-        $('#edit > button').on("tap touchend", function(){
+        $('#edit > button').on("tap touchend click", function(){
                 $('#edit').hide()
                 clearInterval(defaultTime)
 

@@ -3,16 +3,17 @@ $(function () {
     let Bodyheight = $(window).innerHeight();     
     console.log( $(window).innerHeight());
 
-     $('.container').on("scroll",function() { 
+     $('.container').on("scroll",function(){ 
           
           let etctop =  $('#etccon').offset().top;
+
+          let etctopdiv =  $('#etccon>div').offset().top;
           let containertop =  $('.container').scrollTop();
           let nowheight = $('.now').innerHeight();
 
           let maxmintop =  $('#maxmin').offset().top;
           let maxminheight = $('#maxmin').innerHeight();
           let maxmincalc = nowheight - maxminheight
-
 
           let weathertop =  $('#weather').offset().top;
           let weatherheight = $('#weather').innerHeight();
@@ -51,17 +52,14 @@ $(function () {
                if( containertop <= 40 && containertop > 24 ){
                     $('#maxmin, .mainicon').css({
                          'opacity' : 1-containertop*(1/40)
-
                     })
                }else if(containertop > 40 ){
                     $('#maxmin, .mainicon').css({
                          'opacity' : '0'
-
                     })
                }else{
                     $('#maxmin, .mainicon').css({
                          'opacity' : '1'
-
                     })
                }
          
@@ -124,7 +122,7 @@ $(function () {
           
 
 
-          if(etctop < 63 ){
+          if(etctopdiv < 63 ){
           
                $('.header-sm').css({ 
                               'top': '62px',   
