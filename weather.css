@@ -124,14 +124,29 @@ body{
 
 .scrollside{
     position: absolute;
-    width: 317px;
-    padding: 8px;
-    border-radius: 0 0 12px 12px;
-    /* background-color: #ffffff40; */
-    
+    width: 100%;
+
+    border-radius:0px  0px 12px 12px;
+    bottom: 0px;
+    z-index: 1;
+    padding-top: 1px;
+    background-color: #ffffff40;
  
 }
 
+.forescr{
+    height: 96px;
+}
+
+
+.forecon{
+    position: absolute;
+    width: 317px;
+    margin: 0px;
+    padding: 8px ;
+    z-index: 3;
+
+}
 
 
 #forecast{
@@ -192,9 +207,10 @@ margin: 0px;
 
 .header-sm{
     width: 100%;
-    /* background-color: #ffffff40; */
+    background-color: #ffffff40;
     height: auto;
     position: sticky;
+    z-index: 5;
     top: 0;
     left: 0;
     border-radius: 12px 12px 0px 0px;
@@ -211,7 +227,7 @@ margin: 0px;
     padding-bottom: 6px;
     margin-left: 8px;
     margin-right: 8px;
-    border-bottom: 1px solid #ffffff40;
+    /* border-bottom: 1px solid #ffffff40; */
 }
 
 
@@ -230,13 +246,14 @@ margin: 0px;
     /* overflow: hidden; */
     border-radius: 12px;
     position: relative;
-    background-color: #ffffff40;
+    /* backdrop-filter: blur(10px); */
+    /* background-color: #ffffff40; */
 
 }
 
 .half{
     width: 156px;
-    background-color: #ffffff40;
+    /* background-color: #ffffff40; */
     border-radius: 12px;
     position: relative;
 
@@ -246,6 +263,8 @@ margin: 0px;
 .week{
     height: 308px;
 }
+
+
 
 .weekcontainer{
   
@@ -264,6 +283,11 @@ margin: 0px;
 .weekday:nth-child(1){
     border-top: none;
 }
+
+.weekscr{
+    height: 284px;
+}
+
 .cav > span{
     width: 24px;
     text-align: center;
@@ -289,7 +313,6 @@ margin: 0px;
 }
 
 .rain{
-    background-color: #ffffff40;
 }
 
 .raincontainer{
@@ -300,7 +323,7 @@ margin: 0px;
 }
 
 .sun{
-    background-color: #ffffff40;
+
 }
 
 .suninfo{

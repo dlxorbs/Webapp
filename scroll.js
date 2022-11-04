@@ -83,6 +83,7 @@ $(function () {
                          // 'transform' : 'scale(0)'
                     })
                }else{
+                    
                     $('#weather').css({
                          'opacity' : '1',
                          'transition' : '0.2s',
@@ -117,28 +118,81 @@ $(function () {
 
           //
 
+
+
+
           let forecasttop = $('#forecastcon').offset().top;
+          let weektop    = $('.week').offset().top;
+          let raintop    = $('.rain').offset().top;
+          let suntop    = $('.sun').offset().top;
+          let airtop    = $('.air').offset().top;
+          let sighttop    = $('.sight').offset().top;
+
+
+
           let scrollheight = $('.scrollside').innerHeight()
           
+  
 
-
-          if(etctopdiv < 63 ){
-          
-               $('.header-sm').css({ 
+          if(forecasttop< 63 ){
+               $('#forecastcon > .header-sm').css({ 
                               'top': '62px',   
-                              'z-index' : '3',
                               'mix-blend-mode': 'normal',
                               'backdrop-filter': 'blur(10px)' 
                          })
-     
+
+                         $('.forescr').css({
+                              'height' : 97-(63-Math.round(etctop)),
+                              'padding-top' : '8px',
+                   
+                         })        
           }else{
                          
-               $('.header-sm').css({ 
+               $('#forecastcon >.header-sm').css({ 
                     'top': '62px',   
-                    'z-index' : '3',
                     'mix-blend-mode': 'none',
                     'backdrop-filter': 'none' 
+                     })
+
+               $('.forescr').css({
+                    'height' : 97,
+                    'padding-top' : '0',
+
                })
+         
+          }
+          
+
+          if(weektop< 63 ){
+               $('.week >.header-sm').css({ 
+                              'top': '62px',   
+                              'z-index' : '5',
+                              'mix-blend-mode': 'normal',
+                              'backdrop-filter': 'blur(10px)' 
+                         })
+                         
+               $('.weekscr').css({
+                              'height' : 285-(63-Math.round(weektop)),
+                              'padding-top' : '8px',
+                   
+               })        
+
+          }else{
+                         
+               $('.week >.header-sm').css({ 
+                    'top': '62px',   
+                    'z-index' : '5',
+                    'mix-blend-mode': 'none',
+                    'backdrop-filter': 'none' 
+                     })
+
+                $('.weekscr').css({
+                         'height' : 285,
+                         'padding-top' : '0',
+     
+               })
+             
+         
           }
               
       
