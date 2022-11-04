@@ -64,8 +64,8 @@
 
 
     ctx.beginPath();
-    ctx.arc(srx*st, 40, 4 , 0, 2*Math.PI)
-    ctx.arc(ssx*st, 40, 4 , 0, 2*Math.PI)
+    // ctx.arc(srx*st, 40, 4 , 0, 2*Math.PI)
+    // ctx.arc(ssx*st, 40, 4 , 0, 2*Math.PI)
     ctx.fillStyle = color;
     ctx.fill();
 
@@ -84,8 +84,8 @@
 
     ctx.beginPath();
     for(let i=0; i < 1440; i++){
-    //    let h =  20 * Math.sin(((sunhigh)/360 *  Pi * (i)+Pi/4)/1440) + 40
-       let h =  (i**4 + i**3 +i**2 +i)/1400
+       let h =  20 * Math.cos(((sunhigh)/360 *  Pi * (i)+Pi/2)/1440) + 40
+    //    let h =  (i**4 + i**3 +i**2 +i)/1400
         ctx.lineTo( st*i, h)
        ctx.lineWidth = 1;
     }
@@ -94,8 +94,8 @@
 
     
     ctx.beginPath();
-
-    let h =  20 * Math.sin(((ssx + srx)/720 * Pi * (now-sunhigh)+Pi/4)/1440) + 40
+    let h =  20 * Math.cos(((sunhigh)/360 *  Pi * (now)+Pi/2)/1440) + 40
+    // let h =  20 * Math.sin(((ssx + srx)/720 * Pi * (now-sunhigh)+Pi/4)/1440) + 40
 
     ctx.arc( now*st , h , 6, 0, 2*Math.PI )
 

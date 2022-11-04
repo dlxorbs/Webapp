@@ -399,3 +399,12 @@ margin: 0px;
     right:  -950px;
     z-index: 1;
 }
+
+
+
+.kilometer{
+    width: auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
