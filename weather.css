@@ -344,13 +344,36 @@ margin: 0px;
     gap: 16px;
    
 }
-.sight{
-    height: 156px;
+
+.airscr{
+        height: 132px;
+
+ 
 }
 
 
+.caicon{
+    height: 132px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    z-index: 3;
+}
+
 .caitext{
+    width: 140px;
+    padding:0px 8px;
     height: 28px;
+    font-weight: 600;
+}
+
+.caisuggest{
+    width: 140px;
+    padding:0px 8px;
+    word-break: keep-all;
+    height: auto;
+    font-size: 12px;
 }
 
 .caibar{
@@ -370,6 +393,42 @@ margin: 0px;
     border-radius: 9999px;
     background-color: #fff;
 }
+
+
+.sight{
+    height: 156px;
+}
+
+.sightcon{
+    width: 100%;
+    height: 132px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kilometer {
+    width: 100%;
+    text-align: left;
+    padding-left: 8px;
+    padding-top: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nowsight{
+    height: auto;
+    padding: 0px 8px 8px;
+    font-size: 12px;
+}
+
+.sightscr{
+    height: 132px;
+}
+
+
+
 
 .vibration {
 
@@ -424,10 +483,3 @@ margin: 0px;
 }
 
 
-
-.kilometer{
-    width: auto;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}

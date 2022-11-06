@@ -34,12 +34,12 @@ $(function(){
      let ppm = 10**(-3)
 
 let c = [
-     ppm* Math.round(data.list[0].components.so2),
-     ppm* Math.round(data.list[0].components.co),
-     ppm* Math.round(data.list[0].components.o3),
-     ppm* Math.round(data.list[0].components.no2),
-     data.list[0].components.pm10,
-     data.list[0].components.pm2_5
+     ppm*data.list[0].components.so2,
+     ppm*data.list[0].components.co,
+     ppm*data.list[0].components.o3,
+     ppm*data.list[0].components.no2,
+     10**(-1)*data.list[0].components.pm10,
+     10**(-1)*data.list[0].components.pm2_5
      ]
 
 console.log(c)
@@ -91,7 +91,7 @@ if(c[1] <= 2){
      ih[1]  = 500;
      il[1]  = 251;
      bph[1] = 50;
-     bpl[1] = 15;
+     bpl[1] = 15.1;
 }
 
 //O3 변환
@@ -202,7 +202,7 @@ let ip = [
 
 for(let i = 0; i < 6; ++i ){
 
- let cal = ((ih[i]-il[i]) / (bph[i]-bpl[i])) * (c[i] - bpl[i]) +il[i];
+ let cal = (((ih[i]-il[i]) / (bph[i]-bpl[i])) * (c[i] - bpl[i])) +il[i];
  
 ip.push( cal );
 
@@ -214,16 +214,26 @@ console.log(ip)
 
 
 
-let cai = Math.round(Math.max.apply(null,ip))*0.28
+let cai = Math.round(Math.max.apply(null,ip))
 
 console.log(Math.max.apply(null,ip))
 
 //cailocator의 위치를 지정
-$('.caibar').append('<div style = "transform:translate('+cai+'px, -50%)" class = "cailocator"/>')
+$('.caibar').append('<div style = "transform:translate('+cai*0.28+'px, -50%)" class = "cailocator"/>')
 
-
-
-
+if(cai <= 50 && cai >= 0 ){
+     $('.caitext').text( Math.round(cai) + ' - ' + '좋음')
+     $('.caisuggest').text( '현재대기질 지수는' + ' ' + Math.round(cai) + ' 수준으로 야외활동하기 매우 좋습니다.')
+} else if(cai <= 150 && cai > 50 ){
+     $('.caitext').text( Math.round(cai) + ' - ' + '보통')
+     $('.caisuggest').text( '현재대기질 지수는' + ' ' + Math.round(cai) + ' 수준으로 야외활동하기 좋습니다.')
+} else if(cai <= 300 && cai > 150 ){
+     $('.caitext').text( Math.round(cai) + ' - ' + '나쁨')
+     $('.caisuggest').text( '현재대기질 지수는' + ' ' + Math.round(cai) + ' 수준으로 야외활동을 자제하는 것이 좋습니다.')
+} else if(cai <= 500 && cai > 300 ){
+     $('.caitext').text( Math.round(cai) + ' - ' + '매우위험')
+     $('.caisuggest').text( '현재대기질 지수는 ' + ' ' + Math.round(cai) + ' 수준으로 야외활동을 하지 않는 것이 좋습니다.')
+}
 
 
 

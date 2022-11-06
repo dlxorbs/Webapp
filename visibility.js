@@ -8,8 +8,20 @@ $.getJSON(url ,function (data) {
         let sight     = visibility/1000;
 
 
-        $('.sight').append('<sapn class = kilometer>'+ sight +' km </span>')
-        
+        $('.sightcon').prepend('<span class = "kilometer">'+ sight +' km </span>')
+     
+        if(sight <= 10 && 7.5 < sight){
+            $('.nowsight').append('현재 매우'+ '<br>' +'좋은 상태입니다.')
+        }else if(sight <= 7.5 && 5 < sight){
+            $('.nowsight').append('현재'+ '<br>' +'좋은 상태입니다.')
+        }else if(sight <= 5 && 2.5 < sight){
+            $('.nowsight').append('현재 잘 보이지'+ '<br>' +'않는 상태입니다.')
+        }else{
+            $('.nowsight').append('운전하기 '+ '<br>' +'위험한 상태입니다.')
+        }
+
+
+
     }
 );
 
