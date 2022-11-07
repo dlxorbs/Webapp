@@ -16,12 +16,12 @@
     let sunset      = data.sys.sunset;
    
    
-    let dt      = data.dt
+    let dt          = data.dt
     
 
-    let srx = Math.round((sunrise - td)/60);
-    let ssx = Math.round((sunset - td)/60);
-    let now = (dt -td)/60
+    let srx         = Math.round((sunrise - td)/60);
+    let ssx         = Math.round((sunset - td)/60);
+    let now         = (dt -td)/60
     let sunhigh     = Math.round((srx + ssx)/2);
 
     let st =  $('.sun').innerWidth()/1440
@@ -34,9 +34,13 @@
     console.log(now*t)
 
 
+    //일출 일몰 정보제공
 
+    $('.sunrise').append('<p>오전</p>')
+    $('.sunrise').append('<p>'+ moment(sunrise*1000).format('hh:mm') +'</p>')
 
-
+    $('.sunset').append('<p>오후</p>')
+    $('.sunset').append('<p>'+ moment(sunset*1000).format('hh:mm') +'</p>')
     //밤낮변경
 
 
@@ -104,6 +108,10 @@
 
     console.log(sunhigh)
     console.log( srx)
+
+
+
+
 
 
 

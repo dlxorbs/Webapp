@@ -121,37 +121,61 @@ $(function () {
 
 
 
-          let forecasttop = $('#forecastcon').offset().top;
-          let weektop    = $('.week').offset().top;
-          let raintop    = $('.rain').offset().top;
-          let suntop    = $('.sun').offset().top;
-          let airtop    = $('.air').offset().top;
-          let sighttop    = $('.sight').offset().top;
+          let forecasttop          = $('#forecastcon').offset().top;
+   
+          let forecastbottom       = forecasttop + $('#forecastcon').outerHeight();
+          let weektop              = $('.week').offset().top;
+          let weekbottom           = weektop + $('.week').outerHeight();
+          let raintop              = $('.rain').offset().top;
+          let rainbottom           = raintop + $('.rain').outerHeight();
+          let suntop               = $('.sun').offset().top;
+          let sunbottom            = suntop + $('.sun').outerHeight();
+          let airtop               = $('.air').offset().top;
+          let airbottom            = airtop + $('.air').outerHeight();
+          let sighttop             = $('.sight').offset().top;
+          let sightbottom          = sighttop + $('.sight').outerHeight();
 
 
 
           let scrollheight = $('.scrollside').innerHeight()
-          
-  
+    
 
-          if(forecasttop< 63 ){
-               $('#forecastcon > .header-sm').css({ 
-                              'top': '62px',   
+          if(forecasttop < 63 ){
+               $('#forecastcon > .header-sm').css({   
                               'mix-blend-mode': 'normal',
                               'backdrop-filter': 'blur(10px)' 
                          })
 
-                         $('.forescr').css({
-                              'height' : 97-(63-Math.round(etctop)),
-                              'padding-top' : '8px',
-                   
-                         })        
+               if(forecastbottom >= 110){
+                    $('.forescr').css({
+                         'height' : 97-(63-Math.round(forecasttop)),
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('#forecastcon > .header-sm').css({ 
+                         'top': '62px',   
+                         'position': 'sticky',
+                          
+                    })
+               }else{
+                    $('.forescr').css({
+                         'height' : 18,
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('#forecastcon > .header-sm').css({ 
+                         'top': '75px',   
+                         'position': 'relative',
+                          
+                    })
+               }
           }else{
                          
                $('#forecastcon >.header-sm').css({ 
-                    'top': '62px',   
+       
                     'mix-blend-mode': 'none',
-                    'backdrop-filter': 'none' 
+                    'backdrop-filter': 'none',   
+                    
                      })
 
                $('.forescr').css({
@@ -159,9 +183,12 @@ $(function () {
                     'padding-top' : '0',
 
                })
+
+
+               
          
           }
-          
+
 
           if(weektop< 63 ){
                $('.week >.header-sm').css({ 
@@ -171,11 +198,37 @@ $(function () {
                               'backdrop-filter': 'blur(10px)' 
                          })
                          
-               $('.weekscr').css({
-                              'height' : 285-(63-Math.round(weektop)),
-                              'padding-top' : '8px',
+               // $('.weekscr').css({
+               //                'height' : 285-(63-Math.round(weektop)),
+               //                'padding-top' : '8px',
+                              
                    
-               })        
+               // })        
+
+
+               if(weekbottom>= 110){
+                    $('.weekscr').css({
+                         'height' : 285-(63-Math.round(weektop)),
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.week > .header-sm').css({ 
+                         'top': '62px',   
+                         'position': 'sticky',
+                          
+                    })
+               }else{
+                    $('.weekscr').css({
+                         'height' : 18,
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.week > .header-sm').css({ 
+                         'top': '262px',   
+                         'position': 'relative',
+                          
+                    })
+               }
 
           }else{
                          
@@ -193,7 +246,241 @@ $(function () {
                })
              
          
-          }
+          }     
+          
+                          
+          console.log(rainbottom)
+          
+          if(raintop< 63 ){
+               $('.rain >.header-sm').css({ 
+                              'top': '62px',   
+                              'z-index' : '5',
+                              'mix-blend-mode': 'normal',
+                              'backdrop-filter': 'blur(10px)' 
+                         })
+                         
+               $('.rainscr').css({
+                              'height' : 53-(63-Math.round(raintop)),
+                              'padding-top' : '8px',
+                   
+               })       
+               
+               if(rainbottom>= 110){
+                    $('.rainscr').css({
+                         'height' : 53-(63-Math.round(raintop)),
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.rain > .header-sm').css({ 
+                         'top': '62px',   
+                         'position': 'sticky',
+                          
+                    })
+               }else{
+                    $('.rainscr').css({
+                         'height' : 18,
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.rain > .header-sm').css({ 
+                         'top': '29px',   
+                         'position': 'relative',
+                          
+                    })
+               }
+
+          }else{
+                         
+               $('.rain >.header-sm').css({ 
+                    'top': '62px',   
+                    'z-index' : '5',
+                    'mix-blend-mode': 'none',
+                    'backdrop-filter': 'none' 
+                     })
+
+                $('.rainscr').css({
+                         'height' : 53,
+                         'padding-top' : '0',
+     
+               })
+             
+         
+          }     
+          
+
+          
+          if(suntop< 63 ){
+               $('.sun >.header-sm').css({ 
+                              'top': '62px',   
+                              'z-index' : '5',
+                              'mix-blend-mode': 'normal',
+                              'backdrop-filter': 'blur(10px)' 
+                         })
+                         
+               $('.sunscr').css({
+                              'height' : 141-(63-Math.round(suntop)),
+                              'padding-top' : '8px',
+                   
+               })        
+
+               if(sunbottom>= 110){
+                    $('.sunscr').css({
+                         'height' : 141-(63-Math.round(suntop)),
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.sun > .header-sm').css({ 
+                         'top': '62px',   
+                         'position': 'sticky',
+                          
+                    })
+               }else{
+                    $('.sunscr').css({
+                         'height' : 18,
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.sun > .header-sm').css({ 
+                         'top': '110px',   
+                         'position': 'relative',
+                          
+                    })
+               }
+
+          }else{
+                         
+               $('.sun >.header-sm').css({ 
+                    'top': '62px',   
+                    'z-index' : '5',
+                    'mix-blend-mode': 'none',
+                    'backdrop-filter': 'none' 
+                     })
+
+                $('.sunscr').css({
+                         'height' : 141,
+                         'padding-top' : '0',
+     
+               })
+             
+         
+          }     
+              
+          
+          if(airtop< 63 ){
+               $('.air >.header-sm').css({ 
+                              'top': '62px',   
+                              'z-index' : '5',
+                              'mix-blend-mode': 'normal',
+                              'backdrop-filter': 'blur(10px)' 
+                         })
+                         
+               $('.airscr').css({
+                              'height' : 133-(63-Math.round(airtop)),
+                              'padding-top' : '8px',
+                   
+               })   
+               
+               
+               if(airbottom>= 110){
+                    $('.airscr').css({
+                         'height' : 133-(63-Math.round(airtop)),
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.air > .header-sm').css({ 
+                         'top': '62px',   
+                         'position': 'sticky',
+                          
+                    })
+               }else{
+                    $('.airscr').css({
+                         'height' : 18,
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.air > .header-sm').css({ 
+                         'top': '110px',   
+                         'position': 'relative',
+                          
+                    })
+               }
+
+          }else{
+                         
+               $('.air >.header-sm').css({ 
+                    'top': '62px',   
+                    'z-index' : '5',
+                    'mix-blend-mode': 'none',
+                    'backdrop-filter': 'none' 
+                     })
+
+                $('.airscr').css({
+                         'height' : 133,
+                         'padding-top' : '0',
+     
+               })
+             
+         
+          }     
+          
+       
+          if(sighttop< 63 ){
+               $('.sight >.header-sm').css({ 
+                              'top': '62px',   
+                              'z-index' : '5',
+                              'mix-blend-mode': 'normal',
+                              'backdrop-filter': 'blur(10px)' 
+                         })
+                         
+               $('.sightscr').css({
+                              'height' : 133-(63-Math.round(sighttop)),
+                              'padding-top' : '8px',
+                   
+               })        
+
+               if(sightbottom>= 110){
+                    $('.sightscr').css({
+                         'height' : 133-(63-Math.round(sighttop)),
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.sight > .header-sm').css({ 
+                         'top': '62px',   
+                         'position': 'sticky',
+                          
+                    })
+               }else{
+                    $('.sightscr').css({
+                         'height' : 18,
+                         'padding-top' : '8px',
+                     
+                    })
+                    $('.sight > .header-sm').css({ 
+                         'top': '110px',   
+                         'position': 'relative',
+                          
+                    })
+               }
+
+          }else{
+                         
+               $('.sight >.header-sm').css({ 
+                    'top': '62px',   
+                    'z-index' : '5',
+                    'mix-blend-mode': 'none',
+                    'backdrop-filter': 'none' 
+                     })
+
+                $('.sightscr').css({
+                         'height' : 133,
+                         'padding-top' : '0',
+     
+               })
+             
+         
+          }     
+              
+              
               
       
 console.log(etctop)

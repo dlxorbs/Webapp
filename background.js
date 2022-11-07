@@ -1,9 +1,6 @@
 
     $(function(){
-  
-
-
-                
+           
 
         $('.container').append('<div class="cloud"><img src="./weather/cloud.png" alt=""></div>')
 

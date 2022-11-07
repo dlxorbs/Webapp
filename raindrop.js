@@ -1,20 +1,54 @@
 
 $(function(){
-    let = url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst'+
-    '?serviceKey=pYHDTmgYzZjveoevXJ45BoAaA4IqnHc1nSH6O8I5ZXLwGiBYEZL6OPRUGFcFsbXmaykNTzmT/VksWUXGU4Ip8w==&numOfRows=10&pageNo=1'+ 
-    '&regId=11B00000&tmFc=202211060600&dataType=JSON'
+
+
+    let = urld = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat=37.5667&lon=126.9783&cnt=10&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
+
+
+    let Raindrop = [
+
+    ]
+
+    let day = ["일","월","화","수","목","금","토"]
+
+$.getJSON(urld ,function (data) {
+
+    // Daily에서 강우확률 pop 도출
+
+        for(let i = 0; i < 7; i++){
 
 
 
-    let urls = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'+
-    '?serviceKey=pYHDTmgYzZjveoevXJ45BoAaA4IqnHc1nSH6O8I5ZXLwGiBYEZL6OPRUGFcFsbXmaykNTzmT%2FVksWUXGU4Ip8w%3D%3D&numOfRows=200&pageNo=1 '
-    +'&base_date=20221106&base_time=1100&nx=60&ny=127&dataType=JSON&fcstTime=1700'
+            let dom = $('<div> </div>')
+
+                      
+            let dt      = data.list[i].dt
+            let time    = moment(dt*1000).lang("ko").day()
+
+            dom.append('<h4>'+ day[time] + '</h4>')
 
 
-$.getJSON(urls ,function (data) {
+            let pop = data.list[i].pop *100;
+
+            Raindrop.push(pop)
 
 
-    console.log(data)
+            dom.append( '<p>'+Raindrop[i]+'% </p>')
+    
+            $('.raindrop').append(dom)
+
+
+  
+
+        }
+
+        
+
+    
+
+   
+
     });
+
 
 })

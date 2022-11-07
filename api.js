@@ -121,31 +121,7 @@ $(function(){
          dom.append('<h3>'+ time + '</h3>')
          dom.append('<img class = "icon" src = '+ imgURL +' >')
          dom.append('<p>'+ Math.round(temp) + '°C' + '</p>')
-         // dom.append('<p>'+ weather + '</p>')
- 
- 
-         //합계 평균
- 
-         // var sum = 0
-         // if( i % 8 >= 0 && i % 8 < 1){
-         //     let temp = data.list[i].main.temp;
-         //     sum += temp
-            
-         //     dom.append('<p>'+ Math.round(sum) + '</p>')
-         //     console.log(temp)
-         // }if( i % 8 >= 1 && i % 8 <2 ){
-         //     let temp = data.list[i].main.temp;
-         //     sum += temp
-            
-         //     dom.append('<p>'+ Math.round(sum) + '</p>')
-         //     console.log(temp)
-         // }if( i % 8 <= 2){
-         //     let temp = data.list[i].main.temp;
-         //     sum += temp
-            
-         //     dom.append('<p>'+ Math.round(sum) + '</p>')
-         //     console.log(temp)
-         // }
+        
          $('#forecast').append(dom)
  
  

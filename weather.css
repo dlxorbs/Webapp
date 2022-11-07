@@ -236,7 +236,7 @@ margin: 0px;
 
     user-select: none;
 
-    
+    position: relative;
     border-radius: 12px;
 }
 
@@ -320,6 +320,45 @@ margin: 0px;
     border-radius: 0px 0px 12px 12px ;
     height: 52px;
     
+    display: flex;
+    justify-content: center;
+}
+
+.raindrop{
+    width: 317px;
+    height: 40px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.raindrop > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.raindrop > div > p{
+    width: 25px;
+    height: 16px;
+
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    
+
+}
+
+h4{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+}
+
+.rainscr{
+    height: 52px;
 }
 
 .sun{
@@ -327,7 +366,12 @@ margin: 0px;
 }
 
 .suninfo{
-    padding-top: 10px;
+    padding: 10px 8px 0px;
+    width: auto;
+    height: 49px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .suncontainer{
@@ -335,6 +379,35 @@ margin: 0px;
 
     border-radius: 0px 0px 12px 12px ;
 }
+
+.sunrise{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+.sunset{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}
+.suninfo p{
+    font-size: 20px;
+    margin: 0;
+}
+.suninfo img{
+    width: 48px;
+    height: 48px;
+}
+
+.sunscr{
+    height: 140px;
+}
+
+
+
+
 .air{
     height: 156px;
 
@@ -347,8 +420,6 @@ margin: 0px;
 
 .airscr{
         height: 132px;
-
- 
 }
 
 
@@ -453,10 +524,7 @@ margin: 0px;
    border-radius: 9999px;
   }
 
-  .suninfo{
-    width: 100%;
-    height: 49px;
-  }
+
 
   .cavcon{
     width: 100%;

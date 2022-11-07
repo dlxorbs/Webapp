@@ -31,7 +31,6 @@ $.getJSON(urld, function(data){
 
     for(let i = 0; i < 7; i++){
    
-        let temp = data.list[i].temp;
         let min = data.list[i].temp.min;
         let max = data.list[i].temp.max;
 
