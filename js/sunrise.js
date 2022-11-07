@@ -41,7 +41,13 @@
 
     $('.sunset').append('<p>오후</p>')
     $('.sunset').append('<p>'+ moment(sunset*1000).format('hh:mm') +'</p>')
-    //밤낮변경
+
+
+    //일출그래프 생성
+
+
+    $('.cavcon').append(cav)
+
 
 
     let color = '#FFDF97';
@@ -51,14 +57,9 @@
     }else{
         color = '#FFF8CE'
     }
-  
 
 
-
-
-    $('.cavcon').append(cav)
-
-
+    
     var ctx = cav[0].getContext('2d');
 
        cav.attr('width', '333')  
@@ -89,7 +90,6 @@
     ctx.beginPath();
     for(let i=0; i < 1440; i++){
        let h =  20 * Math.cos(((sunhigh)/360 *  Pi * (i)+Pi/2)/1440) + 40
-    //    let h =  (i**4 + i**3 +i**2 +i)/1400
         ctx.lineTo( st*i, h)
        ctx.lineWidth = 1;
     }
@@ -99,7 +99,6 @@
     
     ctx.beginPath();
     let h =  20 * Math.cos(((sunhigh)/360 *  Pi * (now)+Pi/2)/1440) + 40
-    // let h =  20 * Math.sin(((ssx + srx)/720 * Pi * (now-sunhigh)+Pi/4)/1440) + 40
 
     ctx.arc( now*st , h , 6, 0, 2*Math.PI )
 
@@ -113,6 +112,6 @@
 
 
 
-
+    // let h =  20 * Math.sin(((ssx + srx)/720 * Pi * (now-sunhigh)+Pi/4)/1440) + 40
 
 });

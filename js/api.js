@@ -4,6 +4,20 @@
 
  
 $(function(){
+
+let mySwiper = new Swiper('.swiper-container',{
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop : false,
+})
+
+mySwiper.on('slideChange', function () {
+    console.log('slide changed');
+  });
+
+
+
+
     let = url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
  // 마우스를 클릭하거나 마우스가 기타 컨테이너 안에 들어갔을 경우에는 
  var defaultTime = 0
@@ -20,8 +34,7 @@ $(function(){
      $('#etccon').on("taphold", function(){
  
          defaultTime = setInterval(vibration());
-
-          
+      
           $('#edit').show()
           $('#etccon').sortable()
           $('#etccon').sortable( "option", "disabled", false );
@@ -39,16 +52,6 @@ $(function(){
 
 
 
-
-
-
-
- 
-          
- 
- 
-  
- 
  
  //대표예보
   
@@ -72,13 +75,50 @@ $(function(){
          console.log(icon)
          let imgURL =  './weather/' + icon + '.svg'
  
+
+         if(icon == '01d'){
+            weather = '맑음'
+         }else if(icon == '02n' || icon =='02d'){
+            $('#weather').text('한때 흐림');
+         }else if(icon == '03n' || icon =='03d'){
+            $('#weather').text('대체로 흐림');
+         }else if(icon == '04n' || icon =='04d'){
+            $('#weather').text('흐림');
+         }else if(icon == '09n' || icon =='09d'){
+            $('#weather').text('소나기');
+         }else if(icon == '10n' || icon =='10d'){
+            $('#weather').text('비');
+         }else if(icon == '11n' || icon =='11d'){
+            $('#weather').text('폭풍우');
+         }else if(icon == '13n' || icon =='13d'){
+            $('#weather').text('눈');
+         }else if(icon == '50n' || icon =='50d'){
+            $('#weather').text('안개');
+         }else{
+             $('#weather').text(weather);
+         }
+
+
+
+
+
+
+
         $('#temp').text(Math.round(temp) + '°C');
-        $('#weather').text(weather);
+       
         $('#city').text(city);
         $('#maxmin').text('최고' + Math.round(temp_max) + '°C' + '/' + '최저' + Math.round(temp_min) + '°C');
         $('.mainicon').attr('src', imgURL)
  
  
+
+
+     
+
+
+
+
+
         if(sunrise < dt && dt < sunset){
          $('.container').toggleClass('day')
          $('.header_sm').toggleClass('daytext')
@@ -121,7 +161,6 @@ $(function(){
          dom.append('<h3>'+ time + '</h3>')
          dom.append('<img class = "icon" src = '+ imgURL +' >')
          dom.append('<p>'+ Math.round(temp) + '°C' + '</p>')
-        
          $('#forecast').append(dom)
  
  

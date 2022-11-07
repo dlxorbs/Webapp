@@ -206,13 +206,7 @@ for(let i = 0; i < 6; ++i ){
  
 ip.push( cal );
 
-
 }
-
-
-console.log(ip)
-
-
 
 let cai = Math.round(Math.max.apply(null,ip))
 

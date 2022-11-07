@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js"
     integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo="
     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js" integrity="sha512-k2o1KZdvUi59PUXirfThShW9Gdwtk+jVYum6t7RmyCNAVyF9ozijFpvLEWmpgqkHuqSWpflsLf5+PEW6Lxy/wA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="./scrolled.css">
  <link rel="stylesheet" href="./weather.css">
 
@@ -20,143 +22,282 @@
 
 <body>
 
-
-    <div class="container">
-        
-        <div id="edit">
-            <button>완료</button>
-        </div>
-
-
-
-        <div class="now">
-            <div id="city" class="city-nonescrolled"></div>
-           <div class="holder">
-                <img class="mainicon">
-                <div class="now-container">
-                    <div id="temp"></div>
-                    <div id="weather"></div>
-                    <div id="maxmin"></div>
-                </div>
-           </div>
-        </div>
-        
-
-        
-        <div id="etccon">
-
-                
-            <div id="forecastcon" class="info">
-                
-                <div class="header-sm">
-                    <p>24시간 예보</p>
-                </div>
-
-
-                <div class="forecon">     
-                     <div id="forecast">
-                    </div>
-                </div>
-       
-                <div class="forescr scrollside"></div>
-
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div  class="container swiper-slide">
+            
+            <div id="edit">
+                <button>완료</button>
             </div>
-
-            <div class="info week">
-
-                <div class="header-sm">
-                    <p>일주일간의 예보</p>
-                </div>
-
-        
-            <div class="weekcontainer">
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
-                <div class="weekday">
-                    <div class="cav"></div>
-                </div>
+    
+    
+    
+            <div class="now">
+                <div id="city" class="city-nonescrolled"></div>
+               <div class="holder">
+                    <img class="mainicon">
+                    <div class="now-container">
+                        <div id="temp"></div>
+                        <div id="weather"></div>
+                        <div id="maxmin"></div>
+                    </div>
+               </div>
             </div>
             
-            <div class="weekscr scrollside">
-
-            </div>
-
-            </div>
-            <div class="info rain">
-
+    
+            
+            <div id="etccon">
+    
+                    
+                <div id="forecastcon" class="info">
+                    
+                    <div class="header-sm">
+                        <p>24시간 예보</p>
+                    </div>
+    
+    
+                    <div class="forecon">     
+                         <div id="forecast">
+                        </div>
+                    </div>
+           
+                    <div class="forescr scrollside"></div>
+    
+                </div>
+    
+                <div class="info week">
+    
+                    <div class="header-sm">
+                        <p>일주일간의 예보</p>
+                    </div>
+    
+            
+                <div class="weekcontainer">
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                </div>
                 
-                <div class="header-sm">
-                    <p>강우 확률</p>
+                <div class="weekscr scrollside">
+    
                 </div>
-
-                <div class="raincontainer">
-                    <div class="raindrop"></div>
+    
                 </div>
-
-                     
-                <div class="rainscr scrollside"></div>
-
+                <div class="info rain">
+    
+                    
+                    <div class="header-sm">
+                        <p>강우 확률</p>
+                    </div>
+    
+                    <div class="raincontainer">
+                        <div class="raindrop"></div>
+                    </div>
+    
+                         
+                    <div class="rainscr scrollside"></div>
+    
+                </div>
+                <div class="info sun">              
+                    <div class="header-sm">
+                        <p>일출 일몰</p>
+                    </div>
+                 <div class="suncontainer">
+                    <div class="suninfo">
+                        <div class="sunrise"><img src="./weather/sunrise.svg" alt=""></div>
+                        <div class="sunset"><img src="./weather/sunset.svg" alt=""></div>
+                    </div>
+                    <div class="cavcon"></div>
+                 </div>
+    
+                 <div class="sunscr scrollside"></div>
+                </div>
+    
+                <div class="half air">
+                    
+                    <div class="header-sm">
+                        <p>대기질지수(CAI)</p>
+                    </div>
+                <div class="caicon">
+                    <div class="caitext"></div>
+                    <div class="caibar"></div>
+                    <div class="caisuggest"></div>
+                </div>
+                <div class="airscr scrollside"></div>
+                </div>
+                <div class="half sight">
+    
+                    <div class="header-sm">
+                        <p>가시거리</p>
+                    </div>
+                    
+                    <div class="sightcon">
+    
+                        <div class="nowsight"></div>
+                    </div>
+                    <div class="sightscr scrollside"></div>
+                </div>
             </div>
-            <div class="info sun">              
-                <div class="header-sm">
-                    <p>일출 일몰</p>
-                </div>
-             <div class="suncontainer">
-                <div class="suninfo">
-                    <div class="sunrise"><img src="./weather/sunrise.svg" alt=""></div>
-                    <div class="sunset"><img src="./weather/sunset.svg" alt=""></div>
-                </div>
-                <div class="cavcon"></div>
-             </div>
-
-             <div class="sunscr scrollside"></div>
-            </div>
-
-            <div class="half air">
-                
-                <div class="header-sm">
-                    <p>대기질지수(CAI)</p>
-                </div>
-            <div class="caicon">
-                <div class="caitext"></div>
-                <div class="caibar"></div>
-                <div class="caisuggest"></div>
-            </div>
-            <div class="airscr scrollside"></div>
-            </div>
-            <div class="half sight">
-
-                <div class="header-sm">
-                    <p>가시거리</p>
-                </div>
-                
-                <div class="sightcon">
-
-                    <div class="nowsight"></div>
-                </div>
-                <div class="sightscr scrollside"></div>
-            </div>
+    
+            
         </div>
 
-
-    </div>
+        <div class="swiper-slide">  <div  class="container">
+            
+            <div id="edit">
+                <button>완료</button>
+            </div>
     
+    
+    
+            <div class="now">
+                <div id="city" class="city-nonescrolled"></div>
+               <div class="holder">
+                    <img class="mainicon">
+                    <div class="now-container">
+                        <div id="temp"></div>
+                        <div id="weather"></div>
+                        <div id="maxmin"></div>
+                    </div>
+               </div>
+            </div>
+            
+    
+            
+            <div id="etccon">
+    
+                    
+                <div id="forecastcon" class="info">
+                    
+                    <div class="header-sm">
+                        <p>24시간 예보</p>
+                    </div>
+    
+    
+                    <div class="forecon">     
+                         <div id="forecast">
+                        </div>
+                    </div>
+           
+                    <div class="forescr scrollside"></div>
+    
+                </div>
+    
+                <div class="info week">
+    
+                    <div class="header-sm">
+                        <p>일주일간의 예보</p>
+                    </div>
+    
+            
+                <div class="weekcontainer">
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                    <div class="weekday">
+                        <div class="cav"></div>
+                    </div>
+                </div>
+                
+                <div class="weekscr scrollside">
+    
+                </div>
+    
+                </div>
+                <div class="info rain">
+    
+                    
+                    <div class="header-sm">
+                        <p>강우 확률</p>
+                    </div>
+    
+                    <div class="raincontainer">
+                        <div class="raindrop"></div>
+                    </div>
+    
+                         
+                    <div class="rainscr scrollside"></div>
+    
+                </div>
+                <div class="info sun">              
+                    <div class="header-sm">
+                        <p>일출 일몰</p>
+                    </div>
+                 <div class="suncontainer">
+                    <div class="suninfo">
+                        <div class="sunrise"><img src="./weather/sunrise.svg" alt=""></div>
+                        <div class="sunset"><img src="./weather/sunset.svg" alt=""></div>
+                    </div>
+                    <div class="cavcon"></div>
+                 </div>
+    
+                 <div class="sunscr scrollside"></div>
+                </div>
+    
+                <div class="half air">
+                    
+                    <div class="header-sm">
+                        <p>대기질지수(CAI)</p>
+                    </div>
+                <div class="caicon">
+                    <div class="caitext"></div>
+                    <div class="caibar"></div>
+                    <div class="caisuggest"></div>
+                </div>
+                <div class="airscr scrollside"></div>
+                </div>
+                <div class="half sight">
+    
+                    <div class="header-sm">
+                        <p>가시거리</p>
+                    </div>
+                    
+                    <div class="sightcon">
+    
+                        <div class="nowsight"></div>
+                    </div>
+                    <div class="sightscr scrollside"></div>
+                </div>
+            </div>
+    
+            
+        </div></div>
+      
+    </div>    
+</div>
 
 </body>
 

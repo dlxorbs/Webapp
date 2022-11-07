@@ -36,11 +36,7 @@ $.getJSON(urld, function(data){
 
         Max.push(max);
         Min.push(min);
-
-      
         //min max를 array로 빼와서 최댓값 최솟값 구하기
-
- 
 
         let dt      = data.list[i].dt
         let time    = moment(dt*1000).lang("ko").day()
@@ -52,11 +48,12 @@ $.getJSON(urld, function(data){
         console.log(time)
       
     }
+    let weekmax = Math.round(Math.max.apply(null,Max))
+    let weekmin = Math.round(Math.min.apply(null,Min))
 
-    
+
+
     console.log (Icon)
-
-//이거도 수정 필요
 
 for(let i in Icon){
     $('.weekday:eq('+i+')').append('<img class = "icon-sm" src = '+ Icon[i] +' >')
@@ -69,16 +66,8 @@ for(let i in Icon){
    
 
 
-    
-
- 
 
     //min max로 너비 비율 지정하고 시작라인 선정?
-    let weekmax = Math.round(Math.max.apply(null,Max))
-    let weekmin = Math.round(Math.min.apply(null,Min))
-
-
-
 
     console.log(weekmin)
     console.log(weekmax)

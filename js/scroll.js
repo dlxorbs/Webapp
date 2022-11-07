@@ -51,22 +51,25 @@ $(function () {
           if(maxmintop >= maxmincalc){
                if( containertop <= 40 && containertop > 24 ){
                     $('#maxmin, .mainicon').css({
-                         'opacity' : 1-containertop*(1/40)
+                         'opacity' : 1-containertop*(1/40),
+                         '-webkit-opacity' : 1-containertop*(1/40),
+                         '-moz-opacity' : 1-containertop*(1/40)
                     })
                }else if(containertop > 40 ){
                     $('#maxmin, .mainicon').css({
-                         'opacity' : '0'
+                         'opacity' : '0',
+                         '-webkit-opacity' : '0',
+                         '-moz-opacity' : '0'
                     })
                }else{
                     $('#maxmin, .mainicon').css({
-                         'opacity' : '1'
+                         'opacity' : '1',
+                         '-webkit-opacity' : '1',
+                         '-moz-opacity' : '1'
                     })
                }
          
-          }
-
-
-                    
+          }             
           //weather사라지게 스크롤값에 따라
           if(weathertop >= weathercalc){
                if( containertop <= 60 && containertop > 40 ){
@@ -79,6 +82,8 @@ $(function () {
                }else if(containertop > 60 ){
                     $('#weather').css({
                          'opacity' : '0',
+                         '-webkit-opacity' : '0',
+                         '-moz-opacity' : '0',
                          'transition' : 'none',
                          // 'transform' : 'scale(0)'
                     })
@@ -86,6 +91,8 @@ $(function () {
                     
                     $('#weather').css({
                          'opacity' : '1',
+                         '-webkit-opacity' : '1',
+                         '-moz-opacity' : '1',
                          'transition' : '0.2s',
                          // 'transform' : 'scale(1)'
                     })
@@ -341,7 +348,7 @@ $(function () {
                      
                     })
                     $('.sun > .header-sm').css({ 
-                         'top': '110px',   
+                         'top': '116px',   
                          'position': 'relative',
                           
                     })
