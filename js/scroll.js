@@ -171,7 +171,7 @@ $(function () {
                      
                     })
                     $('#forecastcon > .header-sm').css({ 
-                         'top': '75px',   
+                         'top': '73px',   
                          'position': 'relative',
                           
                     })
@@ -243,7 +243,7 @@ $(function () {
                     'top': '62px',   
                     'z-index' : '5',
                     'mix-blend-mode': 'none',
-                    'backdrop-filter': 'none' 
+                    'backdrop-filter': 'blur(10px)' 
                      })
 
                 $('.weekscr').css({

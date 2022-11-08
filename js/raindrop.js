@@ -30,7 +30,7 @@ $.getJSON(urld ,function (data) {
 
             let pop = data.list[i].pop *100;
 
-            Raindrop.push(pop)
+            Raindrop.push(Math.round(pop))
 
 
             dom.append( '<p>'+Raindrop[i]+'% </p>')
@@ -38,13 +38,18 @@ $.getJSON(urld ,function (data) {
             $('.raindrop').append(dom)
 
 
-  
-
         }
 
         
+        let maxlocation = Raindrop.indexOf(Math.max(...Raindrop))
 
+
+        $('.raindrop>div').eq(maxlocation).css({
+            'color' : '#FF7A00'
+        })
     
+        console.log(Raindrop.indexOf(Math.max(...Raindrop)))
+
 
    
 

@@ -118,7 +118,8 @@ body{
     height: 92px;
 }
 #weather{
-    transform-origin: center    ;
+    transform-origin: center;
+
 }
 #city{
     width: 100%;
@@ -146,6 +147,8 @@ body{
     z-index: 1;
     padding-top: 1px;
     background-color: #ffffff40;
+
+    backdrop-filter: blur(10px);
  
 }
 
@@ -213,7 +216,7 @@ margin: 0px;
     -khtml-user-select: none;
      user-select:none;
 
-     padding-bottom: 50px;
+
 
 }
 
@@ -284,7 +287,8 @@ margin: 0px;
 
 
 .weekcontainer{
-  
+    position: relative;
+    z-index: 4;
     border-radius: 0px 0px 12px 12px;
 }
 .weekday{
@@ -333,6 +337,9 @@ margin: 0px;
 }
 
 .raincontainer{
+
+    position: relative;
+    z-index: 4;
 
     border-radius: 0px 0px 12px 12px ;
     height: 52px;
@@ -392,8 +399,10 @@ h4{
 }
 
 .suncontainer{
-    height: 140px;
+    position: relative;
+    z-index: 4;
 
+    height: 140px;
     border-radius: 0px 0px 12px 12px ;
 }
 
@@ -488,6 +497,9 @@ h4{
 }
 
 .sightcon{
+
+    position: relative;
+    z-index: 4;
     width: 100%;
     height: 132px;
     z-index: 3;
@@ -563,11 +575,16 @@ video{
     top: 0;
     background-size: auto;
     width: auto;
-    height: auto;
+    height: 100%;
     opacity: 0.5;
     position: fixed;
     right:  -950px;
     z-index: 1;
+    overflow: hidden;
 }
 
+
+.cloud > img{
+    height: 100%;
+}
 

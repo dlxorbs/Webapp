@@ -5,7 +5,6 @@
  
 $(function(){
 
-    let = url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
  // 마우스를 클릭하거나 마우스가 기타 컨테이너 안에 들어갔을 경우에는 
  var defaultTime = 0
 
@@ -43,6 +42,7 @@ $(function(){
  //대표예보
   
  
+ let = url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.5667&lon=126.9783&appid=cc20170b0ec2d8890b503eaeeee1f93f&units=metric&lang=kr'
  
  $.getJSON(url, function (data) {
          console.log(data)
@@ -63,8 +63,8 @@ $(function(){
          let imgURL =  './weather/' + icon + '.svg'
  
 
-         if(icon == '01d'){
-            weather = '맑음'
+         if(icon == '01d' || icon =='01n'){
+            $('#weather').text('맑음');
          }else if(icon == '02n' || icon =='02d'){
             $('#weather').text('한때 흐림');
          }else if(icon == '03n' || icon =='03d'){
@@ -86,11 +86,6 @@ $(function(){
          }
 
 
-
-
-
-
-
         $('#temp').text(Math.round(temp) + '°C');
        
         $('#city').text(city);
@@ -98,12 +93,6 @@ $(function(){
         $('.mainicon').attr('src', imgURL)
  
  
-
-
-     
-
-
-
 
 
         if(sunrise < dt && dt < sunset){
